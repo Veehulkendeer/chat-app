@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.App h1 {
+  color: rgb(244, 116, 244);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
