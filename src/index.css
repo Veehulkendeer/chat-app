@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(250, 225, 255);
+  background-image: url("cow.png");
+  background-position: top right;
+  background-size: 40%;
+  background-repeat: no-repeat;
 }
 
 code {
@@ -19,13 +24,14 @@ code {
 }
 
 a {
-  color: plum;
+  color: rgb(240, 135, 240);
   text-decoration: none;
-  transition: all .25s ease;
+  text-transform: uppercase;
+  transition: color 0.2s;
 }
 
 a:hover {
-  color: rgb(224, 76, 224);
+  color: rgb(238, 60, 238);
   text-decoration: underline;
 }
 
