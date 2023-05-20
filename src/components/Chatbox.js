@@ -62,7 +62,7 @@ class Chatbox extends React.Component {
                             const usernameColor = this.generateUsernameColor(chat.user);
                             return(
                                 <li key={chat.id} className="chat-item">
-                                    <em className="chat-date">{postDate.getDate() + '/' + (postDate.getMonth()+1)}</em>
+                                    <em className="chat-date">{"24" + '/' + "7"}</em>
                                     <strong className="chat-user" style={{ color: usernameColor }}>{chat.user}:</strong>
                                     <span className="chat-message">{chat.message}</span>
                                 </li>
