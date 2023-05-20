@@ -1,9 +1,41 @@
 .App {
   text-align: center;
+  margin-top: 50px;
 }
 
 .App h1 {
   color: rgb(249, 94, 249);
+  margin-bottom: 20px;
+}
+
+.allow-chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.message-form {
+  margin-top: 20px;
+}
+
+.message-form input {
+  width: 300px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.message-form button {
+  padding: 10px 20px;
+  background-color: rgb(249, 94, 249);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.message-form button:hover {
+  background-color: rgb(212, 64, 212);
 }
 
 .App-logo {

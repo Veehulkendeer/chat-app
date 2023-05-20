@@ -35,7 +35,7 @@ class App extends React.Component {
   render () {
     return (
       <div className="App">
-        <h1>Chat App</h1>
+        <h1>Moochat</h1>
         {this.props.user && 
           <div className="allow-chat">
             <Chatbox />

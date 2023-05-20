@@ -1,12 +1,36 @@
 import React from 'react';
+import './Chatbox.css';
 import firebase from '../firebase';
 
 class Chatbox extends React.Component {
     constructor(props) {
-        super(props);
-        this.state = {
-            chats: []
-        };
+      super(props);
+      this.state = {
+        chats: [],
+        usernameColors: {} // Store the generated colors here
+      };
+    }
+  
+    // Function to generate a color for each username
+    generateUsernameColor = (username) => {
+      // Check if a color has already been assigned to the username
+      if (this.state.usernameColors[username]) {
+        return this.state.usernameColors[username]; // Return the assigned color
+      }
+  
+      // Generate a new color
+      const hue = Math.floor(Math.random() * 361);
+      const color = `hsl(${hue}, 80%, 50%)`;
+  
+      // Store the generated color in the state
+      this.setState(prevState => ({
+        usernameColors: {
+          ...prevState.usernameColors,
+          [username]: color
+        }
+      }));
+  
+      return color;
     }
     componentDidMount(){
         const chatRef = firebase.database().ref('general');
@@ -29,19 +53,23 @@ class Chatbox extends React.Component {
     }
     render() {
         return(
-            <div className="chatbox">
-                <ul className="chat-list">
-                    {this.state.chats.map(chat => {
-                        const postDate = new Date(chat.date);
-                        return(
-                            <li key={chat.id}>
-                                <em>{postDate.getDate() + '/' + (postDate.getMonth()+1)}</em>
-                                <strong>{chat.user}:</strong>
-                                {chat.message}
-                            </li>
-                        )
-                    })}
-                </ul>
+            <div className="container">
+                <div className="chatbox">
+                    <ul className="chat-list">
+                        {this.state.chats.map(chat => {
+                            const postDate = new Date(chat.date);
+                            // Generate a color for the username
+                            const usernameColor = this.generateUsernameColor(chat.user);
+                            return(
+                                <li key={chat.id} className="chat-item">
+                                    <em className="chat-date">{postDate.getDate() + '/' + (postDate.getMonth()+1)}</em>
+                                    <strong className="chat-user" style={{ color: usernameColor }}>{chat.user}:</strong>
+                                    <span className="chat-message">{chat.message}</span>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
             </div>
         );
     }

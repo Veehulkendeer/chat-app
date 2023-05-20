@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+  }
+
+.chatbox {
+    background-color: #fcefc9;
+    border: 1px solid #ff4f9e;
+    padding: 20px;
+    margin: 0;
+    height: 200px; /* Set a fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 300px; /* Set a fixed width */
+  }
+  
+  .chat-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .chat-list li {
+    margin-bottom: 10px;
+  }
+  
+  .chat-list li em {
+    font-style: italic;
+    color: #888;
+    margin-right: 10px;
+  }
+  
+  .chat-list li strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .chat-list li strong,
+  .chat-list li em {
+    margin-right: 10px;
+  }
+  
+  .chat-list li:last-child {
+    margin-bottom: 0;
+  }
