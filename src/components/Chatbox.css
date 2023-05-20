@@ -24,19 +24,12 @@
     margin-bottom: 10px;
   }
   
-  .chat-list li em {
-    font-style: italic;
-    color: #888;
-    margin-right: 10px;
-  }
-  
   .chat-list li strong {
     font-weight: bold;
     color: #333;
   }
   
-  .chat-list li strong,
-  .chat-list li em {
+  .chat-list li strong {
     margin-right: 10px;
   }
   
