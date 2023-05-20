@@ -5,11 +5,16 @@ import firebase from '../firebase';
 class Chatbox extends React.Component {
     constructor(props) {
       super(props);
+      this.chatboxRef = React.createRef();
       this.state = {
         chats: [],
         usernameColors: {} // Store the generated colors here
       };
     }
+
+    scrollToBottom = () => {
+        this.chatboxRef.current.scrollTop = this.chatboxRef.current.scrollHeight;
+      };
   
     // Function to generate a color for each username
     generateUsernameColor = (username) => {
@@ -51,10 +56,15 @@ class Chatbox extends React.Component {
             this.setState({chats});
         });
     }
+    componentDidUpdate(prevProps) {
+        if (prevProps.chats !== this.props.chats && this.props.chats) {
+          this.scrollToBottom();
+        }
+      }
     render() {
         return(
             <div className="container">
-                <div className="chatbox">
+                <div className="chatbox" ref={this.chatboxRef}>
                     <ul className="chat-list">
                         {this.state.chats.map(chat => {
                             // Generate a color for the username
