@@ -6,10 +6,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(250, 225, 255);
-  background-image: url("cow.png");
-  background-position: top right;
-  background-size: 40%;
-  background-repeat: no-repeat;
+  background-image: url("cow.png"), url("bull.png"), url("grass.png");
+  background-position: top right, top left, top center;
+  background-size: 35%, 35%, 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat;
 }
 
 code {
@@ -18,7 +18,7 @@ code {
 }
 
 .main-nav {
-  text-align: left;
+  text-align: center;
   margin-bottom: 50px;
   padding: 0 25px;
 }
